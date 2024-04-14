@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('version')->default('0.0.0');
             $table->bigInteger('lines_of_code')->nullable();
+            $table->string('classification')->nullable();
+            $table->foreign('id')->references('id')->on('starships'); 
         });
     }
 

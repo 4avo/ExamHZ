@@ -14,5 +14,5 @@ class Firmware extends Model
     public function starship(): BelongsTo {
         return $this->belongsTo(Starship::class);
     }
-
+    
 }

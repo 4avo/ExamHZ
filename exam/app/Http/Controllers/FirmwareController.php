@@ -23,7 +23,14 @@ class FirmwareController extends Controller
 
     /** return the show firmware view*/ 
     public function show(Firmware $firmware)
-    {
+    {   
+        if ($firmware->lines_of_code <= 500) {
+            $firmware->classification = 'Small';
+        }
+        else {
+            $firmware->classification = 'Huge';
+        }
+
         return view('firmwares.show', [
             'firmware' => $firmware,
         ]);
